@@ -9,7 +9,7 @@ namespace rakuXsta
         public App()
         {
             InitializeComponent();
-
+            string a = "a";
             MainPage = new MainPage();
         }
 
