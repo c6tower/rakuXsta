@@ -15,7 +15,6 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
     <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
     <AndroidUseAapt2>true</AndroidUseAapt2>
@@ -100,7 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\rakuXsta\rakuXsta.csproj">
-      <Project>{59890BED-71C5-4E13-B1B3-ED1B37B5DE72}</Project>
+      <Project>{AAEEAAEF-9334-452E-A870-E9F9F461A475}</Project>
       <Name>rakuXsta</Name>
     </ProjectReference>
   </ItemGroup>
