@@ -19,7 +19,7 @@ namespace rakuXsta
 
         protected override void OnSleep()
         {
-            //conflict
+            //改行 conflict
         }
 
         protected override void OnResume()
