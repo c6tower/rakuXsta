@@ -11,20 +11,18 @@ namespace rakuXsta.Pages
         public HomePage()
         {
             InitializeComponent();
-
-            //初期データ
-            CardListData.Add(new Card("らくらくスタンプ", "レストラン", "３ポイント"));
-            CardListData.Add(new Card("楽々スタンプ", "コンビニ", "２ポイント"));
-            CardListData.Add(new Card("ラクラクスタンプ", "カフェ", "7ポイント"));
-            CardListData.Add(new Card("楽スタ", "ファストフード", "8ポイント"));
-            CardListData.Add(new Card("スタンプ", "本屋", "2ポイント"));
+            //起動時所持カード読み取り処理(仮)
+            string token = "eyJhbGciOiJIUzI1NiJ9.bWlob21pZG8.T3GHHpZVlaDNiiF9RglE39Mo5U7O55OUbtu5CqN2XUg";
+            HttpPostStart obj = new HttpPostStart(token);
+            List<Item> items = obj.Exe();
 
             // ListViewにデータソースをセット
-            cardList.ItemsSource = CardListData;
-
+            cardList.ItemsSource = items;
+            //押したときのデータ
             cardList.ItemSelected += (sender, e) =>
             {
-                Navigation.PushAsync(new DetailPage((Card)e.SelectedItem));
+                //Error!!!!!!!!!!
+                Navigation.PushAsync(new DetailPage((List<Item>)e.SelectedItem));
             };
         }
 

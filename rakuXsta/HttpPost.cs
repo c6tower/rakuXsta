@@ -63,18 +63,18 @@ namespace rakuXsta
             return cards;
         }
 
-        public class ListDataToParse
-        {
-            public List<Item> cardAry { get; set; }
-        }
+    }
+    public class ListDataToParse
+    {
+        public List<Item> cardAry { get; set; }
+    }
 
-        public class Item
-        {
-            public string name { get; set; }
-            public string img { get; set; }
-            public string info { get; set; }
-            public string fk_card_id { get; set; }
-            public string point { get; set; }
-        }
+    public class Item
+    {
+        public string name { get; set; }
+        public string img { get; set; }
+        public string info { get; set; }
+        public string fk_card_id { get; set; }
+        public string point { get; set; }
     }
 }

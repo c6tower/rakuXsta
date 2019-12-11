@@ -32,9 +32,10 @@
                             Orientation="Horizontal">
                             <StackLayout
                                 Orientation="Vertical">
-                                <Label Text="{Binding Name}"/>
-                                <Label Text="{Binding Category}"/>
-                                <Label Text="{Binding Point}"/>
+                                <Label Text="{Binding name}"/>
+                                <Label Text="{Binding info}"/>
+                                <Label Text="{Binding fk_card_id}"/>
+                                <Label Text="{Binding point}"/>
                             </StackLayout>
                             <Image
                                 WidthRequest="40"
