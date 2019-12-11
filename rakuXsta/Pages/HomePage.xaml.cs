@@ -36,7 +36,7 @@ namespace rakuXsta.Pages
 
         public void Camera_Change(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new CameraPage());
+            Navigation.PushAsync(new QRScanPage());
         }
 
     }
