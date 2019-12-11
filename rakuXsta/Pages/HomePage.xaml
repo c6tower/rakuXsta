@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="rakuXsta.Pages.HomePage">
+    <StackLayout
+        Orientation="Vertical"
+        Margin="16"
+        Spacing="16">
+
+        <StackLayout
+            Orientation="Horizontal"
+            Spacing="16">
+
+            <Button
+                HorizontalOptions="CenterAndExpand"
+                HeightRequest="60"
+                BackgroundColor="Black"
+                TextColor="White"
+                BorderRadius="100"
+                Text="update"
+                Clicked="AppendNewData"/>
+        </StackLayout>
+
+        <ListView
+            x:Name="cardList"
+            HasUnevenRows="true">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout
+                            HorizontalOptions="FillAndExpand"
+                            Orientation="Horizontal">
+                            <StackLayout
+                                Orientation="Vertical">
+                                <Label Text="{Binding Name}"/>
+                                <Label Text="{Binding Category}"/>
+                                <Label Text="{Binding Point}"/>
+                            </StackLayout>
+                            <Image
+                                WidthRequest="40"
+                                HeightRequest="40"
+                                BackgroundColor="Black"
+                                VerticalOptions="Center"
+                                HorizontalOptions="EndAndExpand"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <StackLayout>
+            <ImageButton Source = "camera.png"
+                HeightRequest="50"
+                WidthRequest="50"
+                VerticalOptions="Center"
+                HorizontalOptions="EndAndExpand"
+                Clicked="Camera_Change"/>
+        </StackLayout>
+
+    </StackLayout>
+</ContentPage>
