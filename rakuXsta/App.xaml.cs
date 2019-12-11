@@ -19,7 +19,7 @@ namespace rakuXsta
 
         protected override void OnSleep()
         {
-            // Handle when your app sleeps
+            //conflict
         }
 
         protected override void OnResume()
