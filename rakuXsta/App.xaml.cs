@@ -14,7 +14,7 @@ namespace rakuXsta
 
         protected override void OnStart()
         {
-            // Handle when your app starts
+            //conflict
         }
 
         protected override void OnSleep()
