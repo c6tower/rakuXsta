@@ -23,7 +23,9 @@
 
         <ListView
             x:Name="cardList"
-            HasUnevenRows="true">
+            HasUnevenRows="false"
+            RowHeight="200"
+            SeparatorColor="Black">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -31,7 +33,7 @@
                             HorizontalOptions="FillAndExpand"
                             Orientation="Horizontal">
                             <StackLayout
-                                Orientation="Vertical">
+                                VerticalOptions="CenterAndExpand">
                                 <Label Text="{Binding name}"/>
                                 <Label Text="{Binding info}"/>
                                 <Label Text="{Binding fk_card_id}"/>
