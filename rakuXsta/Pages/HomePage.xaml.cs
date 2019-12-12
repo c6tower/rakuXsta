@@ -22,7 +22,7 @@ namespace rakuXsta.Pages
             cardList.ItemSelected += (sender, e) =>
             {
                 //Error!!!!!!!!!!
-                Navigation.PushAsync(new DetailPage((List<Item>)e.SelectedItem));
+                Navigation.PushAsync(new DetailPage((Item)e.SelectedItem));
             };
         }
 

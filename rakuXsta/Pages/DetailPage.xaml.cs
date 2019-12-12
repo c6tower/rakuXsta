@@ -7,13 +7,13 @@ namespace rakuXsta.Pages
 {
     public partial class DetailPage : ContentPage
     {
-        public DetailPage(List<Item> items)
+        public DetailPage(Item items)
         {
             InitializeComponent();
 
-            nameValue.Text = items[0].name;
-            categoryValue.Text = items[0].info;
-            pointValue.Text = items[0].point;
+            nameValue.Text = items.name;
+            categoryValue.Text = items.info;
+            pointValue.Text = items.point;
 
         }
     }
