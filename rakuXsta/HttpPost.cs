@@ -197,10 +197,13 @@ namespace rakuXsta
         public string msg;
     }
 
-    class HttpPostStart
+    /*
+     * 所持カードリスト取得
+     */
+    class HttpPostGetCardsList
     {
         private string token;
-        public HttpPostStart(string token)//コンストラクタ
+        public HttpPostGetCardsList(string token)//コンストラクタ
         {
             this.token = token;
         }
