@@ -269,7 +269,7 @@ namespace rakuXsta
     /*
      * 作成カード取得
      */
-     /*
+
     class HttpPostGetCreatedCardsList
     {
         private string token;
@@ -278,7 +278,7 @@ namespace rakuXsta
             this.token = token;
         }
 
-        public CreatedCardsList<CreateItem> Exe()//実行メソッド
+        public List<CreatedItems> Exe()//実行メソッド
         {
             //文字コード指定
             Encoding enc = Encoding.GetEncoding("UTF-8");
@@ -316,9 +316,24 @@ namespace rakuXsta
             sr.Close();
             //return output;
 
-            var msg = JsonConvert.DeserializeObject<LoginConfirm>(output);
-            return msg;//Login型で返してる。msg.msgでトークンが取得
+            var dataToParse = JsonConvert.DeserializeObject<CreatedCardsListToParse>(output);
+            var cards = dataToParse.createdCards;
+            return cards;// .idでid、.nameでname、.imgでimg、.infoでinfo、.urlでurl
         }
 
-    }*/
+    }
+    public class CreatedCardsListToParse
+    {
+        public List<CreatedItems> createdCards { get; set; }
+        public string message { get; set; }
+    }
+    public class CreatedItems
+    {
+        public string id { get; set; }
+        public string name { get; set; }
+        public string img { get; set; }
+        public string info { get; set; }
+        public string url { get; set; }
+    }
 }
+
