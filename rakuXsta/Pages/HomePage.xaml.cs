@@ -21,7 +21,6 @@ namespace rakuXsta.Pages
             //押したときのデータ
             cardList.ItemSelected += (sender, e) =>
             {
-                //Error!!!!!!!!!!
                 Navigation.PushAsync(new DetailPage((Item)e.SelectedItem));
             };
         }
