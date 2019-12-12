@@ -65,14 +65,14 @@ namespace rakuXsta
             //return output;
 
             var token = JsonConvert.DeserializeObject<Register>(output);
-            return token;//Register型で返してる。token.tokenでトークンが取得、token.msgでメッセージが取得
+            return token;//Register型で返してる。obj.tokenでトークンが取得、obj.msgでメッセージが取得
         }
 
     }
     public class Register
     {
-        public string token;
-        public string msg;
+        public string token { get; set; }
+        public string msg { get; set; }
     }
 
     /*
@@ -128,14 +128,14 @@ namespace rakuXsta
             //return output;
 
             var token = JsonConvert.DeserializeObject<Login>(output);
-            return token;//Login型で返してる。token.tokenでトークンが取得、token.msgでメッセージが取得
+            return token;//Login型で返してる。obj.tokenでトークンが取得、obj.msgでメッセージが取得
         }
 
     }
     public class Login
     {
-        public string token;
-        public string msg;
+        public string token { get; set; }
+        public string msg { get; set; }
     }
 
     /*
@@ -188,13 +188,13 @@ namespace rakuXsta
             //return output;
 
             var msg = JsonConvert.DeserializeObject<LoginConfirm>(output);
-            return msg;//Login型で返してる。msg.msgでトークンが取得
+            return msg;//Login型で返してる。obj.msgでトークンが取得
         }
 
     }
     public class LoginConfirm
     {
-        public string msg;
+        public string msg { get; set; }
     }
 
     /*
@@ -231,6 +231,7 @@ namespace rakuXsta
             //POST送信するデータの長さを指定
             req.ContentLength = data.Length;
             //データをPOST送信するためのStreamを取得
+            //timeout例外処理！！！！！！！
             Stream reqStream = req.GetRequestStream();
             //送信するデータを書き込む
             reqStream.Write(data, 0, data.Length);
@@ -248,13 +249,14 @@ namespace rakuXsta
 
             var dataToParse = JsonConvert.DeserializeObject<ListDataToParse>(output);
             var cards = dataToParse.cardAry;
-            return cards;
+            return cards ;
         }
 
     }
     public class ListDataToParse
     {
         public List<Item> cardAry { get; set; }
+
     }
 
     public class Item
@@ -262,7 +264,7 @@ namespace rakuXsta
         public string name { get; set; }
         public string img { get; set; }
         public string info { get; set; }
-        public string fk_card_id { get; set; }
+        public string id { get; set; }
         public string point { get; set; }
     }
 
@@ -334,6 +336,206 @@ namespace rakuXsta
         public string img { get; set; }
         public string info { get; set; }
         public string url { get; set; }
+    }
+
+    /*
+     * カード作成
+     */
+    class HttpPostCreateCard
+    {
+        private string card_name;
+        private string card_info;
+        private string token;
+        private string card_img;
+        public HttpPostCreateCard(string card_name, string card_info, string token, string card_img)//コンストラクタ
+        {
+            this.card_name = card_name;
+            this.card_info = card_info;
+            this.token = token;
+            this.card_img = card_img;
+        }
+
+        public CreateCardData Exe()//実行メソッド
+        {
+            //文字コード指定
+            Encoding enc = Encoding.GetEncoding("UTF-8");
+            //POSTする文字列の指定
+            string param = "";
+            Hashtable ht = new Hashtable();
+            ht["postCardName"] = HttpUtility.UrlEncode(card_name, enc);
+            ht["postCardInfo"] = HttpUtility.UrlEncode(card_info, enc);
+            ht["token"] = HttpUtility.UrlEncode(token, enc);
+            ht["postCardImg"] = HttpUtility.UrlEncode(card_img, enc);
+            foreach (string k in ht.Keys)
+            {
+                param += String.Format("{0}={1}&", k, ht[k]);
+            }
+            //バイト型配列に変換
+            byte[] data = Encoding.ASCII.GetBytes(param);
+            //WebRequestの作成
+            WebRequest req = WebRequest.Create("https://stamp-app-api.herokuapp.com/api/create");
+            //メソッドにPOSTを指定
+            req.Method = "POST";
+            //ContentTypeを"application/x-www-form-urlencoded"にする
+            req.ContentType = "application/x-www-form-urlencoded";
+            //POST送信するデータの長さを指定
+            req.ContentLength = data.Length;
+            //データをPOST送信するためのStreamを取得
+            Stream reqStream = req.GetRequestStream();
+            //送信するデータを書き込む
+            reqStream.Write(data, 0, data.Length);
+            reqStream.Close();
+            //サーバーからの応答を受信するためのWebResponseを取得
+            WebResponse res = req.GetResponse();
+            //応答データを受信するためのStreamを取得
+            Stream resStream = res.GetResponseStream();
+            //受信して表示
+            StreamReader sr = new StreamReader(resStream, enc);
+            string output = sr.ReadToEnd();
+            //閉じる
+            sr.Close();
+            var carddata = JsonConvert.DeserializeObject<CreateCardData>(output);
+
+            return carddata;//obj.cardName等で取得
+        }
+    }
+    public class CreateCardData
+    {
+        public string cardName { get; set; }
+        public string cardImg { get; set; }
+        public string cardInfo { get; set; }
+        public string cardUrl { get; set; }
+        public string cardId { get; set; }
+    }
+
+    /*
+     * カード編集
+     */
+    class HttpPostEditCard
+    {
+        private string card_name;
+        private string card_info;
+        private string token;
+        private string card_img;
+        private string card_id;
+        public HttpPostEditCard(string card_name, string card_info, string token, string card_img, string card_id)//コンストラクタ
+        {
+            this.card_name = card_name;
+            this.card_info = card_info;
+            this.token = token;
+            this.card_img = card_img;
+            this.card_id = card_id;
+        }
+
+        public EditCardData Exe()//実行メソッド
+        {
+            //文字コード指定
+            Encoding enc = Encoding.GetEncoding("UTF-8");
+            //POSTする文字列の指定
+            string param = "";
+            Hashtable ht = new Hashtable();
+            ht["postCardName"] = HttpUtility.UrlEncode(card_name, enc);
+            ht["postCardInfo"] = HttpUtility.UrlEncode(card_info, enc);
+            ht["token"] = HttpUtility.UrlEncode(token, enc);
+            ht["postCardImg"] = HttpUtility.UrlEncode(card_img, enc);
+            ht["postCardId"] = HttpUtility.UrlEncode(card_id, enc);
+            foreach (string k in ht.Keys)
+            {
+                param += String.Format("{0}={1}&", k, ht[k]);
+            }
+            //バイト型配列に変換
+            byte[] data = Encoding.ASCII.GetBytes(param);
+            //WebRequestの作成
+            WebRequest req = WebRequest.Create("https://stamp-app-api.herokuapp.com/api/edit");
+            //メソッドにPOSTを指定
+            req.Method = "POST";
+            //ContentTypeを"application/x-www-form-urlencoded"にする
+            req.ContentType = "application/x-www-form-urlencoded";
+            //POST送信するデータの長さを指定
+            req.ContentLength = data.Length;
+            //データをPOST送信するためのStreamを取得
+            Stream reqStream = req.GetRequestStream();
+            //送信するデータを書き込む
+            reqStream.Write(data, 0, data.Length);
+            reqStream.Close();
+            //サーバーからの応答を受信するためのWebResponseを取得
+            WebResponse res = req.GetResponse();
+            //応答データを受信するためのStreamを取得
+            Stream resStream = res.GetResponseStream();
+            //受信して表示
+            StreamReader sr = new StreamReader(resStream, enc);
+            string output = sr.ReadToEnd();
+            //閉じる
+            sr.Close();
+
+            var carddata = JsonConvert.DeserializeObject<EditCardData>(output);
+
+            return carddata;//obj.cardIdで取得
+        }
+    }
+    public class EditCardData
+    {
+        public string cardId { get; set; }
+    }
+
+    class HttpPostAddPoint
+    {
+        private string url_num;
+        private string token;
+        public HttpPostAddPoint(string token, string QR_result)//コンストラクタ
+        {
+            this.token = token;
+            this.url_num = QR_result;
+        }
+
+        public PointData Exe()//実行メソッド
+        {
+            //文字コード指定
+            Encoding enc = Encoding.GetEncoding("UTF-8");
+            //POSTする文字列の指定
+            string param = "";
+            Hashtable ht = new Hashtable();
+            ht["postUserId"] = HttpUtility.UrlEncode(token, enc);
+            ht["postUrlNum"] = HttpUtility.UrlEncode(url_num, enc);
+            foreach (string k in ht.Keys)
+            {
+                param += String.Format("{0}={1}&", k, ht[k]);
+            }
+            //バイト型配列に変換
+            byte[] data = Encoding.ASCII.GetBytes(param);
+            //WebRequestの作成
+            WebRequest req = WebRequest.Create("https://stamp-app-api.herokuapp.com/api/add");
+            //メソッドにPOSTを指定
+            req.Method = "POST";
+            //ContentTypeを"application/x-www-form-urlencoded"にする
+            req.ContentType = "application/x-www-form-urlencoded";
+            //POST送信するデータの長さを指定
+            req.ContentLength = data.Length;
+            //データをPOST送信するためのStreamを取得
+            Stream reqStream = req.GetRequestStream();
+            //送信するデータを書き込む
+            reqStream.Write(data, 0, data.Length);
+            reqStream.Close();
+            //サーバーからの応答を受信するためのWebResponseを取得
+            WebResponse res = req.GetResponse();
+            //応答データを受信するためのStreamを取得
+            Stream resStream = res.GetResponseStream();
+            //受信して表示
+            StreamReader sr = new StreamReader(resStream, enc);
+            string output = sr.ReadToEnd();//表示方法変更する！！！！！！
+            //閉じる
+            sr.Close();
+            //エラー発生(修正済み)
+
+            var pointdata = JsonConvert.DeserializeObject<PointData>(output);
+            return pointdata;//.point等で取得
+
+        }
+    }
+    class PointData
+    {
+        public string point { get; set; }
+        public string cardId { get; set; }
     }
 }
 

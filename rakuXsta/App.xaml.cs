@@ -10,10 +10,14 @@ namespace rakuXsta
     {
         public App()
         {
+            InitializeComponent();
+            MainPage = new NavigationPage(new Pages.MainPage());
         }
 
+        
         protected override void OnStart()
         {
+            /*
             var myToken = new Token();
 
             
@@ -27,7 +31,7 @@ namespace rakuXsta
             else // キャッシュがあったとき
             {
                 MainPage = new NavigationPage(new Pages.MainPage());
-            }
+            }*/
                 
 
 

@@ -36,7 +36,7 @@
                                 VerticalOptions="CenterAndExpand">
                                 <Label Text="{Binding name}"/>
                                 <Label Text="{Binding info}"/>
-                                <Label Text="{Binding fk_card_id}"/>
+                                <Label Text="{Binding id}"/>
                                 <Label Text="{Binding point}"/>
                             </StackLayout>
                             <Image
