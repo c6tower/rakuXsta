@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Reactive.Linq;
+using Akavache;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+
 
 namespace rakuXsta.Pages
 {
@@ -22,7 +24,15 @@ namespace rakuXsta.Pages
 
             loginButton.Clicked += async (sender, e) =>
             {
-                // usernameEntry.Text
+                HttpPostLogin regster = new HttpPostLogin(usernameEntry.Text, passwordEntry.Text);
+                var token = new Token
+                {
+                    CachedToken = regster.Exe().token
+                };
+                await BlobCache.LocalMachine.InsertObject("token", token);
+                usernameEntry.Text = "finish";
+                passwordEntry.Text = "complete";
+
             };
 
             signupButton.Clicked += async (sender, e) =>

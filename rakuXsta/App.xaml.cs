@@ -17,9 +17,8 @@ namespace rakuXsta
             var myToken = new Token();
 
             
-            // Akavacheでtoken読み出し
             Token token = null;
-
+            // Akavacheでtoken読み出し
             BlobCache.LocalMachine.GetObject<Token>("token").Subscribe(x => token = x);
             if (token == null) // キャッシュがなかったとき 
             {
