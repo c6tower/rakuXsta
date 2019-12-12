@@ -495,7 +495,7 @@ namespace rakuXsta
             //POSTする文字列の指定
             string param = "";
             Hashtable ht = new Hashtable();
-            ht["postUserId"] = HttpUtility.UrlEncode(token, enc);
+            ht["token"] = HttpUtility.UrlEncode(token, enc);
             ht["postUrlNum"] = HttpUtility.UrlEncode(url_num, enc);
             foreach (string k in ht.Keys)
             {
