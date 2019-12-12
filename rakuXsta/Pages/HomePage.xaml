@@ -34,10 +34,10 @@
                             Orientation="Horizontal">
                             <StackLayout
                                 VerticalOptions="CenterAndExpand">
-                                <Label Text="{Binding name}"/>
-                                <Label Text="{Binding info}"/>
-                                <Label Text="{Binding id}"/>
-                                <Label Text="{Binding point}"/>
+                                <Label Text="{Binding Name}"/>
+                                <Label Text="{Binding Info}"/>
+                                <Label Text="{Binding Id}"/>
+                                <Label Text="{Binding Point}"/>
                             </StackLayout>
                             <Image
                                 WidthRequest="40"

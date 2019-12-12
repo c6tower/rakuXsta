@@ -65,14 +65,14 @@ namespace rakuXsta
             //return output;
 
             var token = JsonConvert.DeserializeObject<Register>(output);
-            return token;//Register型で返してる。obj.tokenでトークンが取得、obj.msgでメッセージが取得
+            return token;//Register型で返してる。obj.Tokenでトークンが取得、obj.Msgでメッセージが取得
         }
 
     }
     public class Register
     {
-        public string token { get; set; }
-        public string msg { get; set; }
+        public string Token { get; set; }
+        public string Msg { get; set; }
     }
 
     /*
@@ -128,14 +128,14 @@ namespace rakuXsta
             //return output;
 
             var token = JsonConvert.DeserializeObject<Login>(output);
-            return token;//Login型で返してる。obj.tokenでトークンが取得、obj.msgでメッセージが取得
+            return token;//Login型で返してる。obj.Tokenでトークンが取得、obj.Msgでメッセージが取得
         }
 
     }
     public class Login
     {
-        public string token { get; set; }
-        public string msg { get; set; }
+        public string Token { get; set; }
+        public string Msg { get; set; }
     }
 
     /*
@@ -194,7 +194,7 @@ namespace rakuXsta
     }
     public class LoginConfirm
     {
-        public string msg { get; set; }
+        public string Msg { get; set; }
     }
 
     /*
@@ -248,24 +248,24 @@ namespace rakuXsta
             //return output;
 
             var dataToParse = JsonConvert.DeserializeObject<ListDataToParse>(output);
-            var cards = dataToParse.cardAry;
+            var cards = dataToParse.CardAry;
             return cards ;
         }
 
     }
     public class ListDataToParse
     {
-        public List<Item> cardAry { get; set; }
+        public List<Item> CardAry { get; set; }
 
     }
 
     public class Item
     {
-        public string name { get; set; }
-        public string img { get; set; }
-        public string info { get; set; }
-        public string id { get; set; }
-        public string point { get; set; }
+        public string Name { get; set; }
+        public string Img { get; set; }
+        public string Info { get; set; }
+        public string Id { get; set; }
+        public string Point { get; set; }
     }
 
     /*
@@ -319,23 +319,23 @@ namespace rakuXsta
             //return output;
 
             var dataToParse = JsonConvert.DeserializeObject<CreatedCardsListToParse>(output);
-            var cards = dataToParse.createdCards;
+            var cards = dataToParse.CreatedCards;
             return cards;// .idでid、.nameでname、.imgでimg、.infoでinfo、.urlでurl
         }
 
     }
     public class CreatedCardsListToParse
     {
-        public List<CreatedItems> createdCards { get; set; }
-        public string message { get; set; }
+        public List<CreatedItems> CreatedCards { get; set; }
+        public string Message { get; set; }
     }
     public class CreatedItems
     {
-        public string id { get; set; }
-        public string name { get; set; }
-        public string img { get; set; }
-        public string info { get; set; }
-        public string url { get; set; }
+        public string Id { get; set; }
+        public string Name { get; set; }
+        public string Img { get; set; }
+        public string Info { get; set; }
+        public string Url { get; set; }
     }
 
     /*
@@ -396,16 +396,16 @@ namespace rakuXsta
             sr.Close();
             var carddata = JsonConvert.DeserializeObject<CreateCardData>(output);
 
-            return carddata;//obj.cardName等で取得
+            return carddata;//obj.CardName等で取得
         }
     }
     public class CreateCardData
     {
-        public string cardName { get; set; }
-        public string cardImg { get; set; }
-        public string cardInfo { get; set; }
-        public string cardUrl { get; set; }
-        public string cardId { get; set; }
+        public string CardName { get; set; }
+        public string CardImg { get; set; }
+        public string CardInfo { get; set; }
+        public string CardUrl { get; set; }
+        public string CardId { get; set; }
     }
 
     /*
@@ -470,12 +470,12 @@ namespace rakuXsta
 
             var carddata = JsonConvert.DeserializeObject<EditCardData>(output);
 
-            return carddata;//obj.cardIdで取得
+            return carddata;//obj.CardIdで取得
         }
     }
     public class EditCardData
     {
-        public string cardId { get; set; }
+        public string CardId { get; set; }
     }
 
     class HttpPostAddPoint
@@ -528,14 +528,14 @@ namespace rakuXsta
             //エラー発生(修正済み)
 
             var pointdata = JsonConvert.DeserializeObject<PointData>(output);
-            return pointdata;//.point等で取得
+            return pointdata;//.Point等で取得
 
         }
     }
     class PointData
     {
-        public string point { get; set; }
-        public string cardId { get; set; }
+        public string Point { get; set; }
+        public string CardId { get; set; }
     }
 }
 

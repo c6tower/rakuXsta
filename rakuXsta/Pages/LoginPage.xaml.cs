@@ -27,7 +27,7 @@ namespace rakuXsta.Pages
                 HttpPostLogin regster = new HttpPostLogin(usernameEntry.Text, passwordEntry.Text);
                 var token = new Token
                 {
-                    CachedToken = regster.Exe().token
+                    CachedToken = regster.Exe().Token
                 };
                 await BlobCache.LocalMachine.InsertObject("token", token);
                 usernameEntry.Text = "finish";
