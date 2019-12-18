@@ -20,7 +20,7 @@ namespace rakuXsta.Pages
                 zxing.IsAnalyzing = false;  //読み取り停止
                 HttpPostAddPoint obj = new HttpPostAddPoint(token, result.Text);
                 string point = obj.Exe().Point;
-                await DisplayAlert("通知", "次の値を読み取りました：" + point, "OK");
+                await DisplayAlert("らくXスタ", "ポイントをつけたよ！", "OK");
                 zxing.IsAnalyzing = true;   //読み取り再開
             });
         }
