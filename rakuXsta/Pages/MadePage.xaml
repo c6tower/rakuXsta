@@ -7,20 +7,6 @@
         Margin="16"
         Spacing="16">
 
-        <StackLayout
-            Orientation="Horizontal"
-            Spacing="16">
-
-            <Button
-                HorizontalOptions="CenterAndExpand"
-                HeightRequest="60"
-                BackgroundColor="Black"
-                TextColor="White"
-                BorderRadius="100"
-                Text="update"
-                Clicked="AppendNewData"/>
-        </StackLayout>
-
         <ListView
             x:Name="cardList"
             HasUnevenRows="false"
@@ -37,7 +23,7 @@
                                 <Label Text="{Binding Name}"/>
                                 <Label Text="{Binding Info}"/>
                                 <Label Text="{Binding Id}"/>
-                                <Label Text="{Binding Point}"/>
+                                <Label Text="{Binding Img}"/>
                             </StackLayout>
                             <Image
                                 WidthRequest="40"

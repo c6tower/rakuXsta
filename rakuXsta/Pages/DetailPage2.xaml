@@ -20,16 +20,21 @@
 
             <Label
                 FontAttributes="Bold"
-                Text="Category"/>
+                Text="Info"/>
 
             <Label
-                x:Name="categoryValue"/>
+                x:Name="infoValue"/>
             <Label
                 FontAttributes="Bold"
-                Text="Point"/>
+                Text="Img"/>
 
             <Label
-                x:Name="pointValue"/>
+                x:Name="imgValue"/>
+            <Label 
+                FontAttributes="Bold"
+                Text="Id"/>
+
+            <Label x:Name="idValue"/>
 
 
         </StackLayout>

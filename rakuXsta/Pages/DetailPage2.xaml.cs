@@ -12,13 +12,14 @@ namespace rakuXsta.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DetailPage2 : ContentPage
     {
-        public DetailPage2(Item items)
+        public DetailPage2(CreatedItems items)
         {
             InitializeComponent();
 
             nameValue.Text = items.Name;
-            categoryValue.Text = items.Info;
-            pointValue.Text = items.Point;
+            infoValue.Text = items.Info;
+            imgValue.Text = items.Img;
+            idValue.Text = items.Id;
         }
     }
 }
