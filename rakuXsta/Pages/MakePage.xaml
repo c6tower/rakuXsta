@@ -13,7 +13,12 @@
             <Entry x:Name="card_img"/>
 
             <Button Clicked="PostCreateCardData"
-                    />
+                    HorizontalOptions="CenterAndExpand"
+                    HeightRequest="60"
+                    BorderWidth="60"
+                    BackgroundColor="Yellow"
+                    TextColor="Black"
+                    Text="完了"/>
 
         </StackLayout>
     </ContentPage.Content>
