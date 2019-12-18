@@ -7,4 +7,5 @@
     <pages:HomePage Title="ホーム" Icon="home.jpeg"/>
     <pages:MakePage Title="つくる" Icon="Plus.png"/>
     <pages:MadePage Title="作成カード" Icon="Note.png"/>
+    <pages:QRScanPage Title="カメラ" Icon="camera.png"/>
 </TabbedPage>
