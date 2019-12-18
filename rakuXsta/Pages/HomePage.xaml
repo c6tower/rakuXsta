@@ -51,14 +51,5 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <StackLayout>
-            <ImageButton Source = "camera.png"
-                HeightRequest="50"
-                WidthRequest="50"
-                VerticalOptions="Center"
-                HorizontalOptions="EndAndExpand"
-                Clicked="Camera_Change"/>
-        </StackLayout>
-
     </StackLayout>
 </ContentPage>
