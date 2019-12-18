@@ -223,7 +223,7 @@ namespace rakuXsta
             //バイト型配列に変換
             byte[] data = Encoding.ASCII.GetBytes(param);
             //WebRequestの作成
-            WebRequest req = WebRequest.Create("http://stamp-app-api.herokuapp.com/api/list");
+            WebRequest req = WebRequest.Create("https://stamp-app-api.herokuapp.com/api/list");
             //メソッドにPOSTを指定
             req.Method = "POST";
             //ContentTypeを"application/x-www-form-urlencoded"にする
