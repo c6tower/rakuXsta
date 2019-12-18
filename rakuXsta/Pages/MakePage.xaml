@@ -5,6 +5,15 @@
             <Label Text="カード作成"
                    VerticalOptions="CenterAndExpand"
                    HorizontalOptions="CenterAndExpand"/>
+            <Label Text="カード名"/>
+            <Entry x:Name="card_name"
+                   Placeholder="カード名"/>
+            <Label Text="カード詳細"/>
+            <Editor x:Name="card_info"
+                    Placeholder="カード詳細"/>
+            <Label Text="スタンプイメージ"/>
+            <Entry x:Name="card_img"/>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

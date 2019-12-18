@@ -347,8 +347,7 @@ namespace rakuXsta
         private string card_info;
         private string token;
         private string card_img;
-        public HttpPostCreateCard(string card_name, string card_info, string token, string card_img)//コンストラクタ
-        {
+        public HttpPostCreateCard(string card_name, string card_info, string card_img, string token){
             this.card_name = card_name;
             this.card_info = card_info;
             this.token = token;
