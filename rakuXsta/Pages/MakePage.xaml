@@ -2,9 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="rakuXsta.Pages.MakePage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="カード作成"
-                   VerticalOptions="CenterAndExpand"
-                   HorizontalOptions="CenterAndExpand"/>
+            <Label Text="カード作成"/>
             <Label Text="カード名"/>
             <Entry x:Name="card_name"
                    Placeholder="カード名"/>
@@ -13,6 +11,9 @@
                     Placeholder="カード詳細"/>
             <Label Text="スタンプイメージ"/>
             <Entry x:Name="card_img"/>
+
+            <Button Clicked="PostCreateCardData"
+                    />
 
         </StackLayout>
     </ContentPage.Content>
