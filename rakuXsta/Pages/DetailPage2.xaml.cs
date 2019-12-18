@@ -20,6 +20,8 @@ namespace rakuXsta.Pages
             infoValue.Text = items.Info;
             imgValue.Text = items.Img;
             idValue.Text = items.Id;
+            string url = "https://api.qrserver.com/v1/create-qr-code/?data="+items.Url;
+            urlValue.Source = url;
         }
     }
 }

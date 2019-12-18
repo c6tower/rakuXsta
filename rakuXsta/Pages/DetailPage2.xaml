@@ -36,6 +36,8 @@
 
             <Label x:Name="idValue"/>
 
+            <Image x:Name="urlValue"/>
+
 
         </StackLayout>
     </ContentPage.Content>
