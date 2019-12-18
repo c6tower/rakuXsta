@@ -11,9 +11,9 @@ namespace rakuXsta.Pages
         {
             InitializeComponent();
 
-            nameValue.Text = items.name;
-            categoryValue.Text = items.info;
-            pointValue.Text = items.point;
+            nameValue.Text = items.Name;
+            categoryValue.Text = items.Info;
+            pointValue.Text = items.Point;
 
         }
     }
