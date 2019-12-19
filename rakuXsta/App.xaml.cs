@@ -15,9 +15,10 @@ namespace rakuXsta
             MainPage = new NavigationPage(new Pages.MainPage());
         }
 
-        
+        /*
         protected override void OnStart()
         {
+            
             var startButton = new Button { Text = "スタート" };
             startButton.Clicked += async (object sender, EventArgs e) =>
             {
@@ -44,7 +45,7 @@ namespace rakuXsta
                     }
                 }
             };
-        }
+        }*/
 
         protected override void OnSleep()
         {
