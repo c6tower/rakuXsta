@@ -36,12 +36,16 @@ namespace rakuXsta.Pages
             items = obj.Exe();
         }*/
 
-        private void cardList_Refreshing(object sender, EventArgs e)
+        private async void cardList_Refreshing(object sender, EventArgs e)
         {
-            Task.Run(() => System.Threading.Thread.Sleep(3000));
+            await Task.Run(() => System.Threading.Thread.Sleep(3000));
+            items.Clear();
             string token = "eyJhbGciOiJIUzI1NiJ9.bWlob21pZG8.T3GHHpZVlaDNiiF9RglE39Mo5U7O55OUbtu5CqN2XUg";
             HttpPostGetCardsList obj = new HttpPostGetCardsList(token);
-            items = obj.Exe();
+            foreach (var item in obj.Exe())
+            {
+                items.Add(item);
+            }
             System.Diagnostics.Trace.WriteLine(items[0].Point);
             cardList.EndRefresh();
         }
