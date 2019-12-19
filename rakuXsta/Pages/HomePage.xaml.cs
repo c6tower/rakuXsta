@@ -8,10 +8,11 @@ namespace rakuXsta.Pages
 {
     public partial class HomePage : ContentPage
     {
-        private List<Item> items;
+        private ObservableCollection<Item> items = new ObservableCollection<Item>();
         public HomePage()
         {
             InitializeComponent();
+            
             string token = "eyJhbGciOiJIUzI1NiJ9.bWlob21pZG8.T3GHHpZVlaDNiiF9RglE39Mo5U7O55OUbtu5CqN2XUg";
             HttpPostGetCardsList obj = new HttpPostGetCardsList(token);
             items = obj.Exe();
@@ -35,12 +36,13 @@ namespace rakuXsta.Pages
             items = obj.Exe();
         }*/
 
-        private async void cardList_Refreshing(object sender, EventArgs e)
+        private void cardList_Refreshing(object sender, EventArgs e)
         {
-            await Task.Run(() => System.Threading.Thread.Sleep(3000));
+            Task.Run(() => System.Threading.Thread.Sleep(3000));
             string token = "eyJhbGciOiJIUzI1NiJ9.bWlob21pZG8.T3GHHpZVlaDNiiF9RglE39Mo5U7O55OUbtu5CqN2XUg";
             HttpPostGetCardsList obj = new HttpPostGetCardsList(token);
             items = obj.Exe();
+            System.Diagnostics.Trace.WriteLine(items[0].Point);
             cardList.EndRefresh();
         }
 

@@ -8,7 +8,8 @@ using System.Text;
 using System.Web;
 using System.Text.RegularExpressions;
 using System.Linq;
-
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 
 namespace rakuXsta
 {
@@ -208,7 +209,7 @@ namespace rakuXsta
             this.token = token;
         }
 
-        public List<Item> Exe()//実行メソッド
+        public ObservableCollection<Item> Exe()//実行メソッド
         {
             //文字コード指定
             Encoding enc = Encoding.GetEncoding("UTF-8");
@@ -255,17 +256,18 @@ namespace rakuXsta
     }
     public class ListDataToParse
     {
-        public List<Item> CardAry { get; set; }
+        public ObservableCollection<Item> CardAry { get; set; }
 
     }
 
-    public class Item
+    public class Item 
     {
         public string Name { get; set; }
         public string Img { get; set; }
         public string Info { get; set; }
         public string Id { get; set; }
         public string Point { get; set; }
+            
     }
 
     /*
