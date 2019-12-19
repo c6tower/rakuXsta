@@ -28,9 +28,6 @@ namespace rakuXsta.Pages
             CardListData.Add(new Card("追加２スタンプ", "追加２店", "追加２ポイント"));
         }
 
-<<<<<<< HEAD
-      
-=======
         //起動時にカードデータ取得
         private void HomePage_Appearing(object sender, EventArgs e)
         {
@@ -38,7 +35,6 @@ namespace rakuXsta.Pages
             HttpPostGetCardsList obj = new HttpPostGetCardsList(token);
             items = obj.Exe();
         }
->>>>>>> d9cbecbfad278fd577204768dbf95d10950952ab
 
     }
     public class Card
