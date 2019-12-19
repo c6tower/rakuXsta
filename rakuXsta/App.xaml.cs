@@ -25,7 +25,7 @@ namespace rakuXsta
                 {
                     //Akavacheで読み出し
                     var loaded = await BlobCache.LocalMachine.GetObject<Token>("cache");
-                    Navigation.PushAsync(new Pages.HomePage { Cache = loaded.CachedToken });
+                    MainPage = new NavigationPage(new Pages.MainPage());
                 }
                 catch (Exception)
                 {
