@@ -31,7 +31,7 @@ namespace rakuXsta.Pages
             CardListData.Add(new Card("追加２スタンプ", "追加２店", "追加２ポイント"));
         }
 
-       
+      
 
     }
     public class Card
