@@ -2,10 +2,11 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:pages="clr-namespace:rakuXsta.Pages;assembly=rakuXsta"
+            BarBackgroundColor="#ffd900"
+            BarTextColor="Black"
             x:Class="rakuXsta.Pages.MainPage">
     <!--Pages can be added as references or inline-->
-    <pages:HomePage Title="ホーム" Icon="home.jpeg"/>
-    <pages:MakePage Title="つくる" Icon="Plus.png"/>
-    <pages:MadePage Title="作成カード" Icon="Note.png"/>
-    <pages:QRScanPage Title="カメラ" Icon="camera.png"/>
+    <pages:HomePage Title="ホーム" Icon="home2.jpeg"/>
+    <pages:MakePage Title="つくる" Icon="plus2.png"/>
+    <pages:MadePage Title="作成カード" Icon="card2.png"/>
 </TabbedPage>

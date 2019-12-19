@@ -7,23 +7,12 @@
         Margin="16"
         Spacing="16">
 
-        <StackLayout
-            Orientation="Horizontal"
-            Spacing="16">
-
-            <Button
-                HorizontalOptions="CenterAndExpand"
-                HeightRequest="60"
-                BackgroundColor="Black"
-                TextColor="White"
-                BorderRadius="100"
-                Text="update"
-                Clicked="AppendNewData"/>
-        </StackLayout>
 
         <ListView
             x:Name="cardList"
             HasUnevenRows="false"
+            IsPullToRefreshEnabled="True"
+            Refreshing="cardList_Refreshing"
             RowHeight="200"
             SeparatorColor="Black">
             <ListView.ItemTemplate>

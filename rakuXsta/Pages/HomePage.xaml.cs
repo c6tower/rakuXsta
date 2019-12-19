@@ -1,20 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace rakuXsta.Pages
 {
     public partial class HomePage : ContentPage
     {
-        private ObservableCollection<Card> CardListData = new ObservableCollection<Card>();
+        private List<Item> items;
         public HomePage()
         {
             InitializeComponent();
-            //起動時所持カード読み取り処理(仮)
             string token = "eyJhbGciOiJIUzI1NiJ9.bWlob21pZG8.T3GHHpZVlaDNiiF9RglE39Mo5U7O55OUbtu5CqN2XUg";
             HttpPostGetCardsList obj = new HttpPostGetCardsList(token);
-            List<Item> items = obj.Exe();
+            items = obj.Exe();
 
             // ListViewにデータソースをセット
             cardList.ItemsSource = items;
@@ -25,13 +25,24 @@ namespace rakuXsta.Pages
             };
         }
 
-        public void AppendNewData(object sender, EventArgs e)
-        {
-            CardListData.Add(new Card("追加スタンプ", "追加店", "追加ポイント"));
-            CardListData.Add(new Card("追加２スタンプ", "追加２店", "追加２ポイント"));
-        }
 
-       
+        //起動時にカードデータ取得
+        /*
+        private void HomePage_Appearing(object sender, EventArgs e)
+        {
+            string token = "eyJhbGciOiJIUzI1NiJ9.bWlob21pZG8.T3GHHpZVlaDNiiF9RglE39Mo5U7O55OUbtu5CqN2XUg";
+            HttpPostGetCardsList obj = new HttpPostGetCardsList(token);
+            items = obj.Exe();
+        }*/
+
+        private async void cardList_Refreshing(object sender, EventArgs e)
+        {
+            await Task.Run(() => System.Threading.Thread.Sleep(3000));
+            string token = "eyJhbGciOiJIUzI1NiJ9.bWlob21pZG8.T3GHHpZVlaDNiiF9RglE39Mo5U7O55OUbtu5CqN2XUg";
+            HttpPostGetCardsList obj = new HttpPostGetCardsList(token);
+            items = obj.Exe();
+            cardList.EndRefresh();
+        }
 
     }
     public class Card
