@@ -17,43 +17,31 @@ namespace rakuXsta.Pages
         public LoginPage()
         {
             InitializeComponent();
-            var usernameEntry = new Entry { Placeholder = "Username" };
-            var passwordEntry = new Entry { Placeholder = "Password" , IsPassword = true};
-            var loginButton = new Button { Text = "Login", TextColor = Color.White, BackgroundColor = Color.FromHex("77D065") };
-            var signupButton = new Button { Text = "Sign Up" };
-
             loginButton.Clicked += async (sender, e) =>
             {
-                HttpPostLogin regster = new HttpPostLogin(usernameEntry.Text, passwordEntry.Text);
+                HttpPostLogin regster = new HttpPostLogin(Username.Text, Password.Text);
                 var token = new Token
                 {
                     CachedToken = regster.Exe().Token
                 };
-                await BlobCache.LocalMachine.InsertObject("token", token);
-                usernameEntry.Text = "finish";
-                passwordEntry.Text = "complete";
-
+                await BlobCache.LocalMachine.InsertObject("cache", token);
+                Username.Text = "finish";
+                Password.Text = "***";
             };
 
             signupButton.Clicked += async (sender, e) =>
             {
-                 new NavigationPage(new Pages.SignUpPage());
-            };
-
-
-
-            Content = new StackLayout
-            {
-                Spacing = 20, Padding = 50,
-                VerticalOptions = LayoutOptions.Center,
-                Children =
-                    {
-                    new Label {Text = "welcome to rakuXsta", HorizontalOptions = LayoutOptions.Center, VerticalOptions = LayoutOptions.FillAndExpand},
-                        usernameEntry,
-                        passwordEntry,
-                        loginButton,
-                        signupButton
-                    }
+                try
+                {
+                    //Akavacheで読み出し
+                    var loaded = await BlobCache.LocalMachine.GetObject<Token>("cache");
+                    Username.Text = loaded.CachedToken;
+                    Password.Text = "aaaa";
+                }
+                catch (Exception)
+                {
+                    Username.Text = "There is no cached";
+                }
             };
         }
     }

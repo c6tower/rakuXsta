@@ -8,6 +8,7 @@ namespace rakuXsta
 {
     public partial class App : Application
     {
+        public string MYTOKEN;
         public App()
         {
             InitializeComponent();
@@ -17,24 +18,32 @@ namespace rakuXsta
         
         protected override void OnStart()
         {
-            /*
-            var myToken = new Token();
-
-            
-            Token token = null;
-            // Akavacheでtoken読み出し
-            BlobCache.LocalMachine.GetObject<Token>("token").Subscribe(x => token = x);
-            if (token == null) // キャッシュがなかったとき 
+            var startButton = new Button { Text = "スタート" };
+            startButton.Clicked += async (object sender, EventArgs e) =>
             {
-                MainPage = new NavigationPage(new Pages.LoginPage());
-            }
-            else // キャッシュがあったとき
+                try
+                {
+                    //Akavacheで読み出し
+                    var loaded = await BlobCache.LocalMachine.GetObject<Token>("cache");
+                    Navigation.PushAsync(new Pages.HomePage { Cache = loaded.CachedToken });
+                }
+                catch (Exception)
+                {
+                    MainPage = new NavigationPage(new Pages.LoginPage());
+                }
+            };
+            MainPage = new ContentPage
             {
-                MainPage = new NavigationPage(new Pages.MainPage());
-            }*/
-                
-
-
+                Padding = new Thickness(20),
+                Content = new StackLayout
+                {
+                    VerticalOptions = LayoutOptions.Center,
+                    Children =
+                    {
+                        startButton,
+                    }
+                }
+            };
         }
 
         protected override void OnSleep()
