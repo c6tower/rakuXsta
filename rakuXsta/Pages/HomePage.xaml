@@ -25,6 +25,8 @@
         <ListView
             x:Name="cardList"
             HasUnevenRows="false"
+            IsPullToRefreshEnabled="True"
+            Refreshing="cardList_Refreshing"
             RowHeight="200"
             SeparatorColor="Black">
             <ListView.ItemTemplate>
