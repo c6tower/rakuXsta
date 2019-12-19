@@ -2,6 +2,8 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:pages="clr-namespace:rakuXsta.Pages;assembly=rakuXsta"
+            BarBackgroundColor="#ffd900"
+            BarTextColor="Black"
             x:Class="rakuXsta.Pages.MainPage">
     <!--Pages can be added as references or inline-->
     <pages:HomePage Title="ホーム" Icon="home.jpeg"/>
