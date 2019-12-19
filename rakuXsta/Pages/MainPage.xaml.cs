@@ -15,6 +15,16 @@ namespace rakuXsta.Pages
         public MainPage()
         {
             InitializeComponent();
+            ToolbarItem tItem = new ToolbarItem
+            {
+                IconImageSource = "camera4.png",
+                Text = "カメラ",
+                Command = new Command(() =>
+                {
+                    Navigation.PushAsync(new QRScanPage());
+                }),
+            };
+            this.ToolbarItems.Add(tItem);
         }
     }
 }

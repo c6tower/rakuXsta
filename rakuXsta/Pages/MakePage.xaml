@@ -16,7 +16,7 @@
                     HorizontalOptions="CenterAndExpand"
                     HeightRequest="60"
                     BorderWidth="60"
-                    BackgroundColor="Yellow"
+                    BackgroundColor="#ffd900"
                     TextColor="Black"
                     Text="完了"/>
 
