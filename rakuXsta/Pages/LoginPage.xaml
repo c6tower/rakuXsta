@@ -6,10 +6,15 @@
              mc:Ignorable="d"
              x:Class="rakuXsta.Pages.LoginPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout
+            Spacing="20"
+            Padding="50"
+            VerticalOptions="Center">
+            <Label Text="welcome to rakuXsta" HorizontalOptions="Center" VerticalOptions="FillAndExpand"/>
+            <Entry x:Name="Username" Placeholder="Username"/>
+            <Entry x:Name="Password" Placeholder="Password" IsPassword="True"/>
+            <Button x:Name="loginButton" Text="Login" TextColor="White" BackgroundColor="Green"/>
+            <Button x:Name="signupButton" Text="Sign Up"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
