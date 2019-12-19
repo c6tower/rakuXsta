@@ -25,23 +25,12 @@ namespace rakuXsta.Pages
                     CachedToken = regster.Exe().Token
                 };
                 await BlobCache.LocalMachine.InsertObject("cache", token);
-                Username.Text = "finish";
-                Password.Text = "***";
+                await Navigation.PushAsync(new Pages.HomePage(token.CachedToken));
             };
 
-            signupButton.Clicked += async (sender, e) =>
+            signupButton.Clicked += (sender, e) =>
             {
-                try
-                {
-                    //Akavacheで読み出し
-                    var loaded = await BlobCache.LocalMachine.GetObject<Token>("cache");
-                    Username.Text = loaded.CachedToken;
-                    Password.Text = "aaaa";
-                }
-                catch (Exception)
-                {
-                    Username.Text = "There is no cached";
-                }
+                Navigation.PushAsync(new Pages.SignUpPage());
             };
         }
     }
