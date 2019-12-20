@@ -46,7 +46,6 @@ namespace rakuXsta.Pages
             {
                 items.Add(item);
             }
-            System.Diagnostics.Trace.WriteLine(items[0].Point);
             cardList.EndRefresh();
         }
         public string cache;
