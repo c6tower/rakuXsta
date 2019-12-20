@@ -9,11 +9,11 @@ namespace rakuXsta.Pages
     public partial class HomePage : ContentPage
     {
         private ObservableCollection<Item> items = new ObservableCollection<Item>();
-        public HomePage(string token)
+        public HomePage(/*string token*/)
         {
             InitializeComponent();
-            
-            HttpPostGetCardsList obj = new HttpPostGetCardsList(token);
+            ITokenInfo tokenInfo = DependencyService.Get<ITokenInfo>(DependencyFetchTarget.GlobalInstance);
+            HttpPostGetCardsList obj = new HttpPostGetCardsList(tokenInfo.TOKEN);
             items = obj.Exe();
 
             // ListViewにデータソースをセット
@@ -39,8 +39,8 @@ namespace rakuXsta.Pages
         {
             await Task.Run(() => System.Threading.Thread.Sleep(3000));
             items.Clear();
-            string token = "eyJhbGciOiJIUzI1NiJ9.bWlob21pZG8.T3GHHpZVlaDNiiF9RglE39Mo5U7O55OUbtu5CqN2XUg";
-            HttpPostGetCardsList obj = new HttpPostGetCardsList(token);
+            ITokenInfo tokenInfo = DependencyService.Get<ITokenInfo>(DependencyFetchTarget.GlobalInstance);
+            HttpPostGetCardsList obj = new HttpPostGetCardsList(tokenInfo.TOKEN);
             foreach (var item in obj.Exe())
             {
                 items.Add(item);

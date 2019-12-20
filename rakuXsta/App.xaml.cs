@@ -3,49 +3,37 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Akavache;
 using System.Reactive.Linq;
+using System.Threading.Tasks;
 
 namespace rakuXsta
 {
     public partial class App : Application
     {
-        public string MYTOKEN;
         public App()
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new Pages.MainPage());
         }
 
-        /*
-        protected override void OnStart()
+        
+        protected override async void OnStart()
         {
-            
-            var startButton = new Button { Text = "スタート" };
-            startButton.Clicked += async (object sender, EventArgs e) =>
+            try
             {
-                try
-                {
-                    //Akavacheで読み出し
-                    var loaded = await BlobCache.LocalMachine.GetObject<Token>("cache");
-                    MainPage = new NavigationPage(new Pages.MainPage());
-                }
-                catch (Exception)
-                {
-                    MainPage = new NavigationPage(new Pages.LoginPage());
-                }
-            };
-            MainPage = new ContentPage
+                
+                ITokenInfo tokenInfo = DependencyService.Get<ITokenInfo>(DependencyFetchTarget.GlobalInstance);
+                //Akavacheで読み出し
+                /*
+                var loaded = await BlobCache.LocalMachine.GetObject<Token>("cache");
+                tokenInfo.TOKEN = loaded.CachedToken;
+                */
+                tokenInfo.TOKEN = "eyJhbGciOiJIUzI1NiJ9.bWlob21pZG8.T3GHHpZVlaDNiiF9RglE39Mo5U7O55OUbtu5CqN2XUg";
+                MainPage = new NavigationPage(new Pages.MainPage());
+            }
+            catch
             {
-                Padding = new Thickness(20),
-                Content = new StackLayout
-                {
-                    VerticalOptions = LayoutOptions.Center,
-                    Children =
-                    {
-                        startButton,
-                    }
-                }
-            };
-        }*/
+                MainPage = new NavigationPage(new Pages.LoginPage());
+            }
+        }
 
         protected override void OnSleep()
         {

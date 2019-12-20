@@ -24,7 +24,7 @@ namespace rakuXsta.Pages
                     CachedToken = regster.Exe().Token
                 };
                 await BlobCache.LocalMachine.InsertObject("cache", token);
-                await Navigation.PushAsync(new Pages.HomePage(token.CachedToken));
+                await Navigation.PushAsync(new Pages.MainPage(/*oken.CachedToken*/));
             };
         }
     }
