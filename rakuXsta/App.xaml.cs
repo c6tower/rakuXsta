@@ -19,10 +19,11 @@ namespace rakuXsta
         {
             try
             {
-                
+                //インターフェイスを利用してトークンを保存する
                 ITokenInfo tokenInfo = DependencyService.Get<ITokenInfo>(DependencyFetchTarget.GlobalInstance);
                 //Akavacheで読み出し
                 /*
+                 * try catch うまくいかない、tryではmainpageに飛ぶけど、catchではloginpageに飛ばない
                 var loaded = await BlobCache.LocalMachine.GetObject<Token>("cache");
                 tokenInfo.TOKEN = loaded.CachedToken;
                 */

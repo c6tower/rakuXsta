@@ -12,6 +12,7 @@ namespace rakuXsta.Pages
         public HomePage(/*string token*/)
         {
             InitializeComponent();
+            //Token 取得 global だからOK
             ITokenInfo tokenInfo = DependencyService.Get<ITokenInfo>(DependencyFetchTarget.GlobalInstance);
             HttpPostGetCardsList obj = new HttpPostGetCardsList(tokenInfo.TOKEN);
             items = obj.Exe();
