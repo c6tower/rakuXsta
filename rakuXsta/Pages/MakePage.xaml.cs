@@ -18,10 +18,16 @@ namespace rakuXsta.Pages
             string name = card_name.Text;
             string info = card_info.Text;
             string img = card_img.Text;
-            string token = "eyJhbGciOiJIUzI1NiJ9.bWlob21pZG8.T3GHHpZVlaDNiiF9RglE39Mo5U7O55OUbtu5CqN2XUg";
+            ITokenInfo tokenInfo = DependencyService.Get<ITokenInfo>(DependencyFetchTarget.GlobalInstance);
 
-            HttpPostCreateCard obj = new HttpPostCreateCard(name, info, img, token);
+            HttpPostCreateCard obj = new HttpPostCreateCard(name, info, img, tokenInfo.TOKEN);
             var card_data = obj.Exe();
+
+            DisplayAlert(card_data.CardName, "が作成されたよ", "OK");
+
+            card_name.Text = "";
+            card_info.Text = "";
+            card_img.Text = "";
         }
     }
 }
