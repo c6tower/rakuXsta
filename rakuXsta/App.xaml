@@ -6,6 +6,6 @@
              mc:Ignorable="d"
              x:Class="rakuXsta.App">
     <Application.Resources>
-        <!--hello-->
+
     </Application.Resources>
 </Application>
