@@ -27,9 +27,7 @@
                                 VerticalOptions="CenterAndExpand">
                                 <Label Text="{Binding Name}" FontSize="30"/>
                                 <Label Text="{Binding Info}"/>
-                                <Label Text="{Binding Id}"/>
-                                <Label Text="{Binding Point}"/>
-                            </StackLayout>
+                                </StackLayout>
                             <StackLayout Orientation="Horizontal"
                                          VerticalOptions="CenterAndExpand"
                                          HorizontalOptions="CenterAndExpand">

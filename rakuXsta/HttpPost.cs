@@ -417,146 +417,146 @@ namespace rakuXsta
             this.Point = Point;
             if (int.Parse(Point) == 0)
             {
-                this.Image1 = "circle.png";
-                this.Image2 = "circle.png";
-                this.Image3 = "circle.png";
-                this.Image4 = "circle.png";
-                this.Image5 = "circle.png";
-                this.Image6 = "circle.png";
-                this.Image7 = "circle.png";
-                this.Image8 = "circle.png";
-                this.Image9 = "circle.png";
-                this.Image10 = "circle.png";
+                this.Image1 = "camera.png";
+                this.Image2 = "camera.png";
+                this.Image3 = "camera.png";
+                this.Image4 = "camera.png";
+                this.Image5 = "camera.png";
+                this.Image6 = "camera.png";
+                this.Image7 = "camera.png";
+                this.Image8 = "camera.png";
+                this.Image9 = "camera.png";
+                this.Image10 = "camera.png";
             }
             else if (int.Parse(Point) == 1)
             {
-                this.Image1 = "good.png";
-                this.Image2 = "circle.png";
-                this.Image3 = "circle.png";
-                this.Image4 = "circle.png";
-                this.Image5 = "circle.png";
-                this.Image6 = "circle.png";
-                this.Image7 = "circle.png";
-                this.Image8 = "circle.png";
-                this.Image9 = "circle.png";
-                this.Image10 = "circle.png";
+                this.Image1 = "Plus.png";
+                this.Image2 = "camera.png";
+                this.Image3 = "camera.png";
+                this.Image4 = "camera.png";
+                this.Image5 = "camera.png";
+                this.Image6 = "camera.png";
+                this.Image7 = "camera.png";
+                this.Image8 = "camera.png";
+                this.Image9 = "camera.png";
+                this.Image10 = "camera.png";
             }
             else if (int.Parse(Point) == 2)
             {
-                this.Image1 = "good.png";
-                this.Image2 = "good.png";
-                this.Image3 = "circle.png";
-                this.Image4 = "circle.png";
-                this.Image5 = "circle.png";
-                this.Image6 = "circle.png";
-                this.Image7 = "circle.png";
-                this.Image8 = "circle.png";
-                this.Image9 = "circle.png";
-                this.Image10 = "circle.png";
+                this.Image1 = "Plus.png";
+                this.Image2 = "Plus.png";
+                this.Image3 = "camera.png";
+                this.Image4 = "camera.png";
+                this.Image5 = "camera.png";
+                this.Image6 = "camera.png";
+                this.Image7 = "camera.png";
+                this.Image8 = "camera.png";
+                this.Image9 = "camera.png";
+                this.Image10 = "camera.png";
             }
             else if (int.Parse(Point) == 3)
             {
-                this.Image1 = "good.png";
-                this.Image2 = "good.png";
-                this.Image3 = "good.png";
-                this.Image4 = "circle.png";
-                this.Image5 = "circle.png";
-                this.Image6 = "circle.png";
-                this.Image7 = "circle.png";
-                this.Image8 = "circle.png";
-                this.Image9 = "circle.png";
-                this.Image10 = "circle.png";
+                this.Image1 = "Plus.png";
+                this.Image2 = "Plus.png";
+                this.Image3 = "Plus.png";
+                this.Image4 = "camera.png";
+                this.Image5 = "camera.png";
+                this.Image6 = "camera.png";
+                this.Image7 = "camera.png";
+                this.Image8 = "camera.png";
+                this.Image9 = "camera.png";
+                this.Image10 = "camera.png";
             }
             else if (int.Parse(Point) == 4)
             {
-                this.Image1 = "good.png";
-                this.Image2 = "good.png";
-                this.Image3 = "good.png";
-                this.Image4 = "good.png";
-                this.Image5 = "circle.png";
-                this.Image6 = "circle.png";
-                this.Image7 = "circle.png";
-                this.Image8 = "circle.png";
-                this.Image9 = "circle.png";
-                this.Image10 = "circle.png";
+                this.Image1 = "Plus.png";
+                this.Image2 = "Plus.png";
+                this.Image3 = "Plus.png";
+                this.Image4 = "Plus.png";
+                this.Image5 = "camera.png";
+                this.Image6 = "camera.png";
+                this.Image7 = "camera.png";
+                this.Image8 = "camera.png";
+                this.Image9 = "camera.png";
+                this.Image10 = "camera.png";
             }
             else if (int.Parse(Point) == 5)
             {
-                this.Image1 = "good.png";
-                this.Image2 = "good.png";
-                this.Image3 = "good.png";
-                this.Image4 = "good.png";
-                this.Image5 = "good.png";
-                this.Image6 = "circle.png";
-                this.Image7 = "circle.png";
-                this.Image8 = "circle.png";
-                this.Image9 = "circle.png";
-                this.Image10 = "circle.png";
+                this.Image1 = "Plus.png";
+                this.Image2 = "Plus.png";
+                this.Image3 = "Plus.png";
+                this.Image4 = "Plus.png";
+                this.Image5 = "Plus.png";
+                this.Image6 = "camera.png";
+                this.Image7 = "camera.png";
+                this.Image8 = "camera.png";
+                this.Image9 = "camera.png";
+                this.Image10 = "camera.png";
             }
             else if (int.Parse(Point) == 6)
             {
-                this.Image1 = "good.png";
-                this.Image2 = "good.png";
-                this.Image3 = "good.png";
-                this.Image4 = "good.png";
-                this.Image5 = "good.png";
-                this.Image6 = "good.png";
-                this.Image7 = "circle.png";
-                this.Image8 = "circle.png";
-                this.Image9 = "circle.png";
-                this.Image10 = "circle.png";
+                this.Image1 = "Plus.png";
+                this.Image2 = "Plus.png";
+                this.Image3 = "Plus.png";
+                this.Image4 = "Plus.png";
+                this.Image5 = "Plus.png";
+                this.Image6 = "Plus.png";
+                this.Image7 = "camera.png";
+                this.Image8 = "camera.png";
+                this.Image9 = "camera.png";
+                this.Image10 = "camera.png";
             }
             else if (int.Parse(Point) == 7)
             {
-                this.Image1 = "good.png";
-                this.Image2 = "good.png";
-                this.Image3 = "good.png";
-                this.Image4 = "good.png";
-                this.Image5 = "good.png";
-                this.Image6 = "good.png";
-                this.Image7 = "good.png";
-                this.Image8 = "circle.png";
-                this.Image9 = "circle.png";
-                this.Image10 = "circle.png";
+                this.Image1 = "Plus.png";
+                this.Image2 = "Plus.png";
+                this.Image3 = "Plus.png";
+                this.Image4 = "Plus.png";
+                this.Image5 = "Plus.png";
+                this.Image6 = "Plus.png";
+                this.Image7 = "Plus.png";
+                this.Image8 = "camera.png";
+                this.Image9 = "camera.png";
+                this.Image10 = "camera.png";
             }
             else if (int.Parse(Point) == 8)
             {
-                this.Image1 = "good.png";
-                this.Image2 = "good.png";
-                this.Image3 = "good.png";
-                this.Image4 = "good.png";
-                this.Image5 = "good.png";
-                this.Image6 = "good.png";
-                this.Image7 = "good.png";
-                this.Image8 = "good.png";
-                this.Image9 = "circle.png";
-                this.Image10 = "circle.png";
+                this.Image1 = "Plus.png";
+                this.Image2 = "Plus.png";
+                this.Image3 = "Plus.png";
+                this.Image4 = "Plus.png";
+                this.Image5 = "Plus.png";
+                this.Image6 = "Plus.png";
+                this.Image7 = "Plus.png";
+                this.Image8 = "Plus.png";
+                this.Image9 = "camera.png";
+                this.Image10 = "camera.png";
             }
             else if (int.Parse(Point) == 9)
             {
-                this.Image1 = "good.png";
-                this.Image2 = "good.png";
-                this.Image3 = "good.png";
-                this.Image4 = "good.png";
-                this.Image5 = "good.png";
-                this.Image6 = "good.png";
-                this.Image7 = "good.png";
-                this.Image8 = "good.png";
-                this.Image9 = "good.png";
-                this.Image10 = "circle.png";
+                this.Image1 = "Plus.png";
+                this.Image2 = "Plus.png";
+                this.Image3 = "Plus.png";
+                this.Image4 = "Plus.png";
+                this.Image5 = "Plus.png";
+                this.Image6 = "Plus.png";
+                this.Image7 = "Plus.png";
+                this.Image8 = "Plus.png";
+                this.Image9 = "Plus.png";
+                this.Image10 = "camera.png";
             }
             else if (int.Parse(Point) >= 10)
             {
-                this.Image1 = "good.png";
-                this.Image2 = "good.png";
-                this.Image3 = "good.png";
-                this.Image4 = "good.png";
-                this.Image5 = "good.png";
-                this.Image6 = "good.png";
-                this.Image7 = "good.png";
-                this.Image8 = "good.png";
-                this.Image9 = "good.png";
-                this.Image10 = "good.png";
+                this.Image1 = "Plus.png";
+                this.Image2 = "Plus.png";
+                this.Image3 = "Plus.png";
+                this.Image4 = "Plus.png";
+                this.Image5 = "Plus.png";
+                this.Image6 = "Plus.png";
+                this.Image7 = "Plus.png";
+                this.Image8 = "Plus.png";
+                this.Image9 = "Plus.png";
+                this.Image10 = "Plus.png";
             }
         }
 
