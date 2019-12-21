@@ -1,19 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace rakuXsta.Pages
 {
     public partial class MadePage : ContentPage
     {
+        private ObservableCollection<CreatedItems> items = new ObservableCollection<CreatedItems>();
         public MadePage()
         {
             InitializeComponent();
             //起動時所持カード読み取り処理(仮)
-            string token = "eyJhbGciOiJIUzI1NiJ9.bWlob21pZG8.T3GHHpZVlaDNiiF9RglE39Mo5U7O55OUbtu5CqN2XUg";
-            HttpPostGetCreatedCardsList obj = new HttpPostGetCreatedCardsList(token);
-            List<CreatedItems> items = obj.Exe();
+            ITokenInfo tokenInfo = DependencyService.Get<ITokenInfo>(DependencyFetchTarget.GlobalInstance);
+            HttpPostGetCreatedCardsList obj = new HttpPostGetCreatedCardsList(tokenInfo.TOKEN);
+            items = obj.Exe();
 
             // ListViewにデータソースをセット
             cardList.ItemsSource = items;
@@ -23,5 +25,18 @@ namespace rakuXsta.Pages
                 Navigation.PushAsync(new DetailPage2((CreatedItems)e.SelectedItem));
             };
         }
+        private async void madecardList_Refreshing(object sender, EventArgs e)
+        {
+            await Task.Run(() => System.Threading.Thread.Sleep(3000));
+            items.Clear();
+            ITokenInfo tokenInfo = DependencyService.Get<ITokenInfo>(DependencyFetchTarget.GlobalInstance);
+            HttpPostGetCreatedCardsList obj = new HttpPostGetCreatedCardsList(tokenInfo.TOKEN);
+            foreach (var item in obj.Exe())
+            {
+                items.Add(item);
+            }
+            cardList.EndRefresh();
+        }
+        public string cache;
     }
 }

@@ -282,7 +282,7 @@ namespace rakuXsta
             this.token = token;
         }
 
-        public List<CreatedItems> Exe()//実行メソッド
+        public ObservableCollection<CreatedItems> Exe()//実行メソッド
         {
             //文字コード指定
             Encoding enc = Encoding.GetEncoding("UTF-8");
@@ -328,7 +328,7 @@ namespace rakuXsta
     }
     public class CreatedCardsListToParse
     {
-        public List<CreatedItems> CreatedCards { get; set; }
+        public ObservableCollection<CreatedItems> CreatedCards { get; set; }
         public string Message { get; set; }
     }
     public class CreatedItems

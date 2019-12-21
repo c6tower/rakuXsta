@@ -10,6 +10,8 @@
         <ListView
             x:Name="cardList"
             HasUnevenRows="false"
+            IsPullToRefreshEnabled="True"
+            Refreshing="madecardList_Refreshing"
             RowHeight="200"
             SeparatorColor="Black">
             <ListView.ItemTemplate>

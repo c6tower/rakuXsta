@@ -24,10 +24,10 @@ namespace rakuXsta
                 //Akavacheで読み出し
                 
                 // try catch うまくいかない、tryではmainpageに飛ぶけど、catchではloginpageに飛ばない
-                var loaded = await BlobCache.LocalMachine.GetObject<Token>("cache");
-                tokenInfo.TOKEN = loaded.CachedToken;
+                //var loaded = await BlobCache.LocalMachine.GetObject<Token>("cache");
+                //tokenInfo.TOKEN = loaded.CachedToken;
                 
-                //tokenInfo.TOKEN = "eyJhbGciOiJIUzI1NiJ9.bWlob21pZG8.T3GHHpZVlaDNiiF9RglE39Mo5U7O55OUbtu5CqN2XUg";
+                tokenInfo.TOKEN = "eyJhbGciOiJIUzI1NiJ9.bWlob21pZG8.T3GHHpZVlaDNiiF9RglE39Mo5U7O55OUbtu5CqN2XUg";
                 MainPage = new NavigationPage(new Pages.MainPage());
             }
             catch
