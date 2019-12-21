@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 using Xamarin.Forms;
 
@@ -23,7 +22,7 @@ namespace rakuXsta.Pages
             HttpPostCreateCard obj = new HttpPostCreateCard(name, info, img, tokenInfo.TOKEN);
             var card_data = obj.Exe();
 
-            DisplayAlert(card_data.CardName, "が作成されたよ", "OK");
+            var result = DisplayAlert(card_data.CardName, "が作成されたよ", "OK");
 
             card_name.Text = "";
             card_info.Text = "";
