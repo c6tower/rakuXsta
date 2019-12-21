@@ -209,7 +209,7 @@ namespace rakuXsta
             this.token = token;
         }
 
-        public ObservableCollection<Item> Exe()//実行メソッド
+        public ObservableCollection<ItemIncludeImages> Exe()//実行メソッド
         {
             //文字コード指定
             Encoding enc = Encoding.GetEncoding("UTF-8");
@@ -250,7 +250,12 @@ namespace rakuXsta
 
             var dataToParse = JsonConvert.DeserializeObject<ListDataToParse>(output);
             var cards = dataToParse.CardAry;
-            return cards ;
+            ObservableCollection<ItemIncludeImages> cards_include_img = new ObservableCollection<ItemIncludeImages>();
+            foreach (var i in cards)
+            {
+                cards_include_img.Add(new ItemIncludeImages(i.Name, i.Img, i.Info, i.Id, i.Point));
+            }
+            return cards_include_img ;
         }
 
     }
@@ -274,10 +279,12 @@ namespace rakuXsta
      * oaiwfhuahviuwagfiuhawfiu
      */
 
-    public class Schedule
+    public class ItemIncludeImages
     {
-        public string Title { get; set; }
-        public string Place { get; set; }
+        public string Name { get; set; }
+        public string Img { get; set; }
+        public string Info { get; set; }
+        public string Id { get; set; }
         public string Point { get; set; }
         private string image1;
         private string image2;
@@ -400,11 +407,13 @@ namespace rakuXsta
             }
         }
 
-        public Schedule(string Title, string Place, string Point)
+        public ItemIncludeImages(string Name, string Img, string Info, string Id, string Point)
         {
 
-            this.Title = Title;
-            this.Place = Place;
+            this.Name = Name;
+            this.Img = Img;
+            this.Info = Info;
+            this.Id = Id;
             this.Point = Point;
             if (int.Parse(Point) == 0)
             {
@@ -536,7 +545,7 @@ namespace rakuXsta
                 this.Image9 = "good.png";
                 this.Image10 = "circle.png";
             }
-            else if (int.Parse(Point) == 10)
+            else if (int.Parse(Point) >= 10)
             {
                 this.Image1 = "good.png";
                 this.Image2 = "good.png";

@@ -8,7 +8,7 @@ namespace rakuXsta.Pages
 {
     public partial class HomePage : ContentPage
     {
-        private ObservableCollection<Item> items = new ObservableCollection<Item>();
+        private ObservableCollection<ItemIncludeImages> items = new ObservableCollection<ItemIncludeImages>();
         public HomePage(/*string token*/)
         {
             InitializeComponent();
