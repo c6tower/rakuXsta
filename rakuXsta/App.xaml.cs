@@ -15,26 +15,40 @@ namespace rakuXsta
         }
 
         
-        protected override async void OnStart()
+        protected override  void OnStart()
         {
-            try
+            var startButton = new Button { Text = "スタート" };
+
+            ITokenInfo tokenInfo = DependencyService.Get<ITokenInfo>(DependencyFetchTarget.GlobalInstance);
+
+            startButton.Clicked += async (sender, e) =>
             {
-                //インターフェイスを利用してトークンを保存する
-                ITokenInfo tokenInfo = DependencyService.Get<ITokenInfo>(DependencyFetchTarget.GlobalInstance);
-                //Akavacheで読み出し
-                
-                // try catch うまくいかない、tryではmainpageに飛ぶけど、catchではloginpageに飛ばない
-                //var loaded = await BlobCache.LocalMachine.GetObject<Token>("cache");
-                //tokenInfo.TOKEN = loaded.CachedToken;
-                
-                tokenInfo.TOKEN = "eyJhbGciOiJIUzI1NiJ9.bWlob21pZG8.T3GHHpZVlaDNiiF9RglE39Mo5U7O55OUbtu5CqN2XUg";
-                MainPage = new NavigationPage(new Pages.MainPage());
-            }
-            catch
+                try
+                {
+                    var loaded = await BlobCache.LocalMachine.GetObject<Token>("cache");
+                    tokenInfo.TOKEN = loaded.CachedToken;
+
+                    MainPage = new NavigationPage(new Pages.MainPage());
+                }
+                catch
+                {
+                    //飛ばない
+                    MainPage = new NavigationPage(new Pages.LoginPage());
+                }
+            };
+
+            MainPage = new ContentPage
             {
-                //飛ばない
-                MainPage = new NavigationPage(new Pages.LoginPage());
-            }
+                Padding = new Thickness(20),
+                Content = new StackLayout
+                {
+                    VerticalOptions = LayoutOptions.Center,
+                    Children =
+                    {
+                        startButton,
+                    }
+                }
+            };
         }
 
         protected override void OnSleep()
