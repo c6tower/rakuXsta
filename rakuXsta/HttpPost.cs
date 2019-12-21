@@ -271,10 +271,293 @@ namespace rakuXsta
     }
 
     /*
-     * 作成カード取得
+     * oaiwfhuahviuwagfiuhawfiu
      */
 
-    class HttpPostGetCreatedCardsList
+    public class Schedule
+    {
+        public string Title { get; set; }
+        public string Place { get; set; }
+        public string Point { get; set; }
+        private string image1;
+        private string image2;
+        private string image3;
+        private string image4;
+        private string image5;
+        private string image6;
+        private string image7;
+        private string image8;
+        private string image9;
+        private string image10;
+        public string Image1
+        {
+            get
+            {
+                return image1;
+            }
+            set
+            {
+                image1 = value;
+            }
+        }
+        public string Image2
+        {
+            get
+            {
+                return image2;
+            }
+            set
+            {
+                image2 = value;
+            }
+        }
+        public string Image3
+        {
+            get
+            {
+                return image3;
+            }
+            set
+            {
+                image3 = value;
+            }
+        }
+        public string Image4
+        {
+            get
+            {
+                return image4;
+            }
+            set
+            {
+                image4 = value;
+            }
+        }
+        public string Image5
+        {
+            get
+            {
+                return image5;
+            }
+            set
+            {
+                image5 = value;
+            }
+        }
+        public string Image6
+        {
+            get
+            {
+                return image6;
+            }
+            set
+            {
+                image6 = value;
+            }
+        }
+        public string Image7
+        {
+            get
+            {
+                return image7;
+            }
+            set
+            {
+                image7 = value;
+            }
+        }
+        public string Image8
+        {
+            get
+            {
+                return image8;
+            }
+            set
+            {
+                image8 = value;
+            }
+        }
+        public string Image9
+        {
+            get
+            {
+                return image9;
+            }
+            set
+            {
+                image9 = value;
+            }
+        }
+        public string Image10
+        {
+            get
+            {
+                return image10;
+            }
+            set
+            {
+                image10 = value;
+            }
+        }
+
+        public Schedule(string Title, string Place, string Point)
+        {
+
+            this.Title = Title;
+            this.Place = Place;
+            this.Point = Point;
+            if (int.Parse(Point) == 0)
+            {
+                this.Image1 = "circle.png";
+                this.Image2 = "circle.png";
+                this.Image3 = "circle.png";
+                this.Image4 = "circle.png";
+                this.Image5 = "circle.png";
+                this.Image6 = "circle.png";
+                this.Image7 = "circle.png";
+                this.Image8 = "circle.png";
+                this.Image9 = "circle.png";
+                this.Image10 = "circle.png";
+            }
+            else if (int.Parse(Point) == 1)
+            {
+                this.Image1 = "good.png";
+                this.Image2 = "circle.png";
+                this.Image3 = "circle.png";
+                this.Image4 = "circle.png";
+                this.Image5 = "circle.png";
+                this.Image6 = "circle.png";
+                this.Image7 = "circle.png";
+                this.Image8 = "circle.png";
+                this.Image9 = "circle.png";
+                this.Image10 = "circle.png";
+            }
+            else if (int.Parse(Point) == 2)
+            {
+                this.Image1 = "good.png";
+                this.Image2 = "good.png";
+                this.Image3 = "circle.png";
+                this.Image4 = "circle.png";
+                this.Image5 = "circle.png";
+                this.Image6 = "circle.png";
+                this.Image7 = "circle.png";
+                this.Image8 = "circle.png";
+                this.Image9 = "circle.png";
+                this.Image10 = "circle.png";
+            }
+            else if (int.Parse(Point) == 3)
+            {
+                this.Image1 = "good.png";
+                this.Image2 = "good.png";
+                this.Image3 = "good.png";
+                this.Image4 = "circle.png";
+                this.Image5 = "circle.png";
+                this.Image6 = "circle.png";
+                this.Image7 = "circle.png";
+                this.Image8 = "circle.png";
+                this.Image9 = "circle.png";
+                this.Image10 = "circle.png";
+            }
+            else if (int.Parse(Point) == 4)
+            {
+                this.Image1 = "good.png";
+                this.Image2 = "good.png";
+                this.Image3 = "good.png";
+                this.Image4 = "good.png";
+                this.Image5 = "circle.png";
+                this.Image6 = "circle.png";
+                this.Image7 = "circle.png";
+                this.Image8 = "circle.png";
+                this.Image9 = "circle.png";
+                this.Image10 = "circle.png";
+            }
+            else if (int.Parse(Point) == 5)
+            {
+                this.Image1 = "good.png";
+                this.Image2 = "good.png";
+                this.Image3 = "good.png";
+                this.Image4 = "good.png";
+                this.Image5 = "good.png";
+                this.Image6 = "circle.png";
+                this.Image7 = "circle.png";
+                this.Image8 = "circle.png";
+                this.Image9 = "circle.png";
+                this.Image10 = "circle.png";
+            }
+            else if (int.Parse(Point) == 6)
+            {
+                this.Image1 = "good.png";
+                this.Image2 = "good.png";
+                this.Image3 = "good.png";
+                this.Image4 = "good.png";
+                this.Image5 = "good.png";
+                this.Image6 = "good.png";
+                this.Image7 = "circle.png";
+                this.Image8 = "circle.png";
+                this.Image9 = "circle.png";
+                this.Image10 = "circle.png";
+            }
+            else if (int.Parse(Point) == 7)
+            {
+                this.Image1 = "good.png";
+                this.Image2 = "good.png";
+                this.Image3 = "good.png";
+                this.Image4 = "good.png";
+                this.Image5 = "good.png";
+                this.Image6 = "good.png";
+                this.Image7 = "good.png";
+                this.Image8 = "circle.png";
+                this.Image9 = "circle.png";
+                this.Image10 = "circle.png";
+            }
+            else if (int.Parse(Point) == 8)
+            {
+                this.Image1 = "good.png";
+                this.Image2 = "good.png";
+                this.Image3 = "good.png";
+                this.Image4 = "good.png";
+                this.Image5 = "good.png";
+                this.Image6 = "good.png";
+                this.Image7 = "good.png";
+                this.Image8 = "good.png";
+                this.Image9 = "circle.png";
+                this.Image10 = "circle.png";
+            }
+            else if (int.Parse(Point) == 9)
+            {
+                this.Image1 = "good.png";
+                this.Image2 = "good.png";
+                this.Image3 = "good.png";
+                this.Image4 = "good.png";
+                this.Image5 = "good.png";
+                this.Image6 = "good.png";
+                this.Image7 = "good.png";
+                this.Image8 = "good.png";
+                this.Image9 = "good.png";
+                this.Image10 = "circle.png";
+            }
+            else if (int.Parse(Point) == 10)
+            {
+                this.Image1 = "good.png";
+                this.Image2 = "good.png";
+                this.Image3 = "good.png";
+                this.Image4 = "good.png";
+                this.Image5 = "good.png";
+                this.Image6 = "good.png";
+                this.Image7 = "good.png";
+                this.Image8 = "good.png";
+                this.Image9 = "good.png";
+                this.Image10 = "good.png";
+            }
+        }
+
+    }
+
+/*
+ * 作成カード取得
+ */
+
+class HttpPostGetCreatedCardsList
     {
         private string token;
         public HttpPostGetCreatedCardsList(string token)//コンストラクタ

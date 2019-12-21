@@ -18,23 +18,58 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout
-                            HorizontalOptions="FillAndExpand"
-                            Orientation="Horizontal">
+                        <Frame BorderColor="Gray"
+                               CornerRadius="5"
+                               HasShadow="True"
+                               Margin="10">
+                        <StackLayout>
                             <StackLayout
                                 VerticalOptions="CenterAndExpand">
-                                <Label Text="{Binding Name}"/>
+                                <Label Text="{Binding Name}" FontSize="30"/>
                                 <Label Text="{Binding Info}"/>
                                 <Label Text="{Binding Id}"/>
                                 <Label Text="{Binding Point}"/>
                             </StackLayout>
-                            <Image
-                                WidthRequest="40"
-                                HeightRequest="40"
-                                BackgroundColor="Black"
-                                VerticalOptions="Center"
-                                HorizontalOptions="EndAndExpand"/>
+                            <StackLayout Orientation="Horizontal"
+                                         VerticalOptions="CenterAndExpand"
+                                         HorizontalOptions="CenterAndExpand">
+                                <Image Source="{Binding Image1}"
+                                WidthRequest="50"
+                                HeightRequest="50"/>
+                                <Image Source="{Binding Image2}"
+                                WidthRequest="50"
+                                HeightRequest="50"/>
+                                <Image Source="{Binding Image3}"
+                                WidthRequest="50"
+                                HeightRequest="50"/>
+                                <Image Source="{Binding Image4}"
+                                WidthRequest="50"
+                                HeightRequest="50"/>
+                                <Image Source="{Binding Image5}"
+                                WidthRequest="50"
+                                HeightRequest="50"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal"
+                                         VerticalOptions="CenterAndExpand"
+                                         HorizontalOptions="CenterAndExpand">
+                                <Image Source="{Binding Image6}"
+                                WidthRequest="50"
+                                HeightRequest="50"/>
+                                <Image Source="{Binding Image7}"
+                                WidthRequest="50"
+                                HeightRequest="50"/>
+                                <Image Source="{Binding Image8}"
+                                WidthRequest="50"
+                                HeightRequest="50"/>
+                                <Image Source="{Binding Image9}"
+                                WidthRequest="50"
+                                HeightRequest="50"/>
+                                <Image Source="{Binding Image10}"
+                                WidthRequest="50"
+                                HeightRequest="50"/>                            
+                            </StackLayout>
                         </StackLayout>
+                        </Frame>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
