@@ -7,7 +7,7 @@ namespace rakuXsta.Pages
 {
     public partial class DetailPage : ContentPage
     {
-        public DetailPage(Item items)
+        public DetailPage(ItemIncludeImages items)
         {
             InitializeComponent();
 

@@ -17,5 +17,7 @@ namespace rakuXsta.Droid
     class TokenInfo : ITokenInfo
     {
         public string TOKEN { get; set; }
+
+        public List<string> IMAGE { get; set; }
     }
 }

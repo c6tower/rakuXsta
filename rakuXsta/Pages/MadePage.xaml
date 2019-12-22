@@ -22,15 +22,15 @@
                             Orientation="Horizontal">
                             <StackLayout
                                 VerticalOptions="CenterAndExpand">
-                                <Label Text="{Binding Name}"/>
+                                <Label Text="{Binding Name}"
+                                       FontSize="50"
+                                       TextColor="Black"/>
                                 <Label Text="{Binding Info}"/>
-                                <Label Text="{Binding Id}"/>
-                                <Label Text="{Binding Img}"/>
                             </StackLayout>
                             <Image
                                 WidthRequest="40"
                                 HeightRequest="40"
-                                BackgroundColor="Black"
+                                Source="apple.png"
                                 VerticalOptions="Center"
                                 HorizontalOptions="EndAndExpand"/>
                         </StackLayout>

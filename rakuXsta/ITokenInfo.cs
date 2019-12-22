@@ -8,5 +8,7 @@ namespace rakuXsta
     {
         // tokenプロパティ
         string TOKEN { get; set; }
+        List<string> IMAGE { get; set; }
+
     }
 }

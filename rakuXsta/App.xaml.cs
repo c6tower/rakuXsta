@@ -20,14 +20,12 @@ namespace rakuXsta
             var startButton = new Button { Text = "スタート" };
 
             ITokenInfo tokenInfo = DependencyService.Get<ITokenInfo>(DependencyFetchTarget.GlobalInstance);
-
             startButton.Clicked += async (sender, e) =>
             {
                 try
                 {
                     var loaded = await BlobCache.LocalMachine.GetObject<Token>("cache");
                     tokenInfo.TOKEN = loaded.CachedToken;
-
                     MainPage = new NavigationPage(new Pages.MainPage());
                 }
                 catch

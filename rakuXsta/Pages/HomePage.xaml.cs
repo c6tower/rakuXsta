@@ -22,7 +22,7 @@ namespace rakuXsta.Pages
             //押したときのデータ
             cardList.ItemSelected += (sender, e) =>
             {
-                Navigation.PushAsync(new DetailPage((Item)e.SelectedItem));
+                Navigation.PushAsync(new DetailPage((ItemIncludeImages)e.SelectedItem));
             };
         }
 

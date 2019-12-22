@@ -2,18 +2,21 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="rakuXsta.Pages.MakePage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="カード作成"/>
+            <Label Text="カード作成"
+                   FontSize= "30"/>
             <Label Text="カード名"/>
             <Entry x:Name="card_name"
-                   Placeholder="カード名"/>
-            <Label Text="カード詳細"/>
-            <Editor x:Name="card_info"
-                    Placeholder="カード詳細"/>
+                   Placeholder=""/>
             <Label Text="スタンプイメージ"/>
             <Entry x:Name="card_img"/>
+            <Label Text="カード詳細"/>
+            <Editor x:Name="card_info"
+                    Placeholder=""
+                    HeightRequest="200"/>
 
             <Button Clicked="PostCreateCardData"
                     HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="EndAndExpand"
                     HeightRequest="60"
                     BorderWidth="60"
                     BackgroundColor="#ffd900"
