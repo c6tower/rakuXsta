@@ -17,6 +17,7 @@ namespace rakuXsta.Pages
         public LoginPage()
         {
             InitializeComponent();
+            ITokenInfo tokenInfo = DependencyService.Get<ITokenInfo>(DependencyFetchTarget.GlobalInstance);
             loginButton.Clicked += async (sender, e) =>
             {
                 HttpPostLogin regster = new HttpPostLogin(Username.Text, Password.Text);
@@ -25,7 +26,8 @@ namespace rakuXsta.Pages
                     CachedToken = regster.Exe().Token
                 };
                 await BlobCache.LocalMachine.InsertObject("cache", token);
-                await Navigation.PushAsync(new Pages.MainPage(/*token.CachedToken*/));
+                tokenInfo.TOKEN = token.CachedToken;
+                await Navigation.PushAsync(new Pages.MainPage());
             };
 
             signupButton.Clicked += (sender, e) =>
