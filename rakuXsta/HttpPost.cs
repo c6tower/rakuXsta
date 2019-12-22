@@ -432,7 +432,7 @@ namespace rakuXsta
             }
             else if (int.Parse(Point) == 1)
             {
-                this.Image1 = "apple.png";
+                this.Image1 = "good.png";
                 this.Image2 = "circle.png";
                 this.Image3 = "circle.png";
                 this.Image4 = "circle.png";
@@ -445,8 +445,8 @@ namespace rakuXsta
             }
             else if (int.Parse(Point) == 2)
             {
-                this.Image1 = "apple.png";
-                this.Image2 = "apple.png";
+                this.Image1 = "good.png";
+                this.Image2 = "good.png";
                 this.Image3 = "circle.png";
                 this.Image4 = "circle.png";
                 this.Image5 = "circle.png";
@@ -458,9 +458,9 @@ namespace rakuXsta
             }
             else if (int.Parse(Point) == 3)
             {
-                this.Image1 = "apple.png";
-                this.Image2 = "apple.png";
-                this.Image3 = "apple.png";
+                this.Image1 = "good.png";
+                this.Image2 = "good.png";
+                this.Image3 = "good.png";
                 this.Image4 = "circle.png";
                 this.Image5 = "circle.png";
                 this.Image6 = "circle.png";
@@ -471,10 +471,10 @@ namespace rakuXsta
             }
             else if (int.Parse(Point) == 4)
             {
-                this.Image1 = "apple.png";
-                this.Image2 = "apple.png";
-                this.Image3 = "apple.png";
-                this.Image4 = "apple.png";
+                this.Image1 = "good.png";
+                this.Image2 = "good.png";
+                this.Image3 = "good.png";
+                this.Image4 = "good.png";
                 this.Image5 = "circle.png";
                 this.Image6 = "circle.png";
                 this.Image7 = "circle.png";
@@ -484,11 +484,11 @@ namespace rakuXsta
             }
             else if (int.Parse(Point) == 5)
             {
-                this.Image1 = "apple.png";
-                this.Image2 = "apple.png";
-                this.Image3 = "apple.png";
-                this.Image4 = "apple.png";
-                this.Image5 = "apple.png";
+                this.Image1 = "good.png";
+                this.Image2 = "good.png";
+                this.Image3 = "good.png";
+                this.Image4 = "good.png";
+                this.Image5 = "good.png";
                 this.Image6 = "circle.png";
                 this.Image7 = "circle.png";
                 this.Image8 = "circle.png";
@@ -497,12 +497,12 @@ namespace rakuXsta
             }
             else if (int.Parse(Point) == 6)
             {
-                this.Image1 = "apple.png";
-                this.Image2 = "apple.png";
-                this.Image3 = "apple.png";
-                this.Image4 = "apple.png";
-                this.Image5 = "apple.png";
-                this.Image6 = "apple.png";
+                this.Image1 = "good.png";
+                this.Image2 = "good.png";
+                this.Image3 = "good.png";
+                this.Image4 = "good.png";
+                this.Image5 = "good.png";
+                this.Image6 = "good.png";
                 this.Image7 = "circle.png";
                 this.Image8 = "circle.png";
                 this.Image9 = "circle.png";
@@ -510,55 +510,55 @@ namespace rakuXsta
             }
             else if (int.Parse(Point) == 7)
             {
-                this.Image1 = "apple.png";
-                this.Image2 = "apple.png";
-                this.Image3 = "apple.png";
-                this.Image4 = "apple.png";
-                this.Image5 = "apple.png";
-                this.Image6 = "apple.png";
-                this.Image7 = "apple.png";
+                this.Image1 = "good.png";
+                this.Image2 = "good.png";
+                this.Image3 = "good.png";
+                this.Image4 = "good.png";
+                this.Image5 = "good.png";
+                this.Image6 = "good.png";
+                this.Image7 = "good.png";
                 this.Image8 = "circle.png";
                 this.Image9 = "circle.png";
                 this.Image10 = "circle.png";
             }
             else if (int.Parse(Point) == 8)
             {
-                this.Image1 = "apple.png";
-                this.Image2 = "apple.png";
-                this.Image3 = "apple.png";
-                this.Image4 = "apple.png";
-                this.Image5 = "apple.png";
-                this.Image6 = "apple.png";
-                this.Image7 = "apple.png";
-                this.Image8 = "apple.png";
+                this.Image1 = "good.png";
+                this.Image2 = "good.png";
+                this.Image3 = "good.png";
+                this.Image4 = "good.png";
+                this.Image5 = "good.png";
+                this.Image6 = "good.png";
+                this.Image7 = "good.png";
+                this.Image8 = "good.png";
                 this.Image9 = "circle.png";
                 this.Image10 = "circle.png";
             }
             else if (int.Parse(Point) == 9)
             {
-                this.Image1 = "apple.png";
-                this.Image2 = "apple.png";
-                this.Image3 = "apple.png";
-                this.Image4 = "apple.png";
-                this.Image5 = "apple.png";
-                this.Image6 = "apple.png";
-                this.Image7 = "apple.png";
-                this.Image8 = "apple.png";
-                this.Image9 = "apple.png";
+                this.Image1 = "good.png";
+                this.Image2 = "good.png";
+                this.Image3 = "good.png";
+                this.Image4 = "good.png";
+                this.Image5 = "good.png";
+                this.Image6 = "good.png";
+                this.Image7 = "good.png";
+                this.Image8 = "good.png";
+                this.Image9 = "good.png";
                 this.Image10 = "circle.png";
             }
             else if (int.Parse(Point) >= 10)
             {
-                this.Image1 = "apple.png";
-                this.Image2 = "apple.png";
-                this.Image3 = "apple.png";
-                this.Image4 = "apple.png";
-                this.Image5 = "apple.png";
-                this.Image6 = "apple.png";
-                this.Image7 = "apple.png";
-                this.Image8 = "apple.png";
-                this.Image9 = "apple.png";
-                this.Image10 = "apple.png";
+                this.Image1 = "good.png";
+                this.Image2 = "good.png";
+                this.Image3 = "good.png";
+                this.Image4 = "good.png";
+                this.Image5 = "good.png";
+                this.Image6 = "good.png";
+                this.Image7 = "good.png";
+                this.Image8 = "good.png";
+                this.Image9 = "good.png";
+                this.Image10 = "good.png";
             }
         }
 
